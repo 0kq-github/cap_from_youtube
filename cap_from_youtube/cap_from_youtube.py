@@ -14,7 +14,7 @@ class VideoStream:
 
     def __init__(self, video_format):
         self.url = video_format['url']
-        self.resolution = video_format['format_note']
+        self.resolution = video_format['resolution']
         self.height = video_format['height']
         self.width = video_format['width']
 
