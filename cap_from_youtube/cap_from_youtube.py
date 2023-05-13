@@ -48,6 +48,9 @@ def cap_from_youtube(url, resolution=None):
     if not resolution or resolution == 'best':
         return cv2.VideoCapture(streams[-1].url)
 
+    if resolution == "lowest":
+        return cv2.VideoCapture(streams[0].url)
+
     if resolution not in resolutions:
         raise ValueError(f'Resolution {resolution} not available')
     res_index = np.where(resolutions == resolution)[0][0]
